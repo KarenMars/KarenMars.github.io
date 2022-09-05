@@ -4,6 +4,7 @@
   - [What is linked list ?](#what-is-linked-list-)
   - [Basic operations of a linked list](#basic-operations-of-a-linked-list)
   - [Examples](#examples)
+    - [Two pointers (Fast and slow pointers)](#two-pointers-fast-and-slow-pointers)
 
 ### What is linked list ?
 - [Linked list](https://leetcode.cn/leetbook/read/linked-list/jsumh/)
@@ -41,3 +42,33 @@
   - Time complexity O(N)
 
 ### Examples
+#### Two pointers (Fast and slow pointers)
+- [Leetcode 141. Linked list cycle](https://leetcode.cn/problems/linked-list-cycle/)
+- [Leetcode 160. Intersection of Two Linked Lists](https://leetcode.cn/problems/intersection-of-two-linked-lists/)
+  - first solution: using hash set to store visited nodes, time complexity O(m+n), space complexity O(m+n)
+  - second solution: reduce the space complexity, use time complexity replace the space complexity
+    ```python
+    class Solution(object):
+      def getIntersectionNode(self, headA, headB):
+          """
+          :type head1, head1: ListNode
+          :rtype: ListNode
+          """
+          if not headA or not headB:
+            return None
+          cur_A, cur_B = headA, headB
+          while cur_A or cur_B:
+              if cur_A == cur_B:
+                  return cur_A
+              if not cur_B:
+                  cur_B = headA
+              else:
+                  cur_B = cur_B.next
+              if not cur_A:
+                  cur_A = headB
+              else:
+                  cur_A = cur_A.next
+          return None
+    ```
+  
+
