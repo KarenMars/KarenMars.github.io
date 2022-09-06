@@ -43,6 +43,9 @@
 
 ### Examples
 #### Two pointers (Fast and slow pointers)
+- Key problems
+  1. How to set the difference between the speed of the two pointers?
+  2. Use dummy node before the head node 
 - [Leetcode 141. Linked list cycle](https://leetcode.cn/problems/linked-list-cycle/)
 - [Leetcode 160. Intersection of Two Linked Lists](https://leetcode.cn/problems/intersection-of-two-linked-lists/)
   - first solution: using hash set to store visited nodes, time complexity O(m+n), space complexity O(m+n)
@@ -69,6 +72,39 @@
               else:
                   cur_A = cur_A.next
           return None
+    ```
+- [Leetcode 19. Remove Nth Node From End of List](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)
+  - first solution: iterate the whole linked list and iterate the linked list again
+  - second solution: two pointers 
+    ```python
+    class Solution(object):
+    def removeNthFromEnd(self, head, n):
+        """
+        :type head: ListNode
+        :type n: int
+        :rtype: ListNode
+        """
+        if not head:
+            return None
+        dummy_node = ListNode(0)
+        dummy_node.next = head
+
+        fast_cur, slow_cur = dummy_node, dummy_node
+
+        i = 0
+        
+        while i in range(0,n):
+            fast_cur = fast_cur.next
+            i += 1
+
+        while fast_cur.next:
+            fast_cur = fast_cur.next
+            slow_cur = slow_cur.next
+        
+        temp = slow_cur.next.next
+        slow_cur.next.next = None
+        slow_cur.next = temp
+        return dummy_node.next
     ```
   
 
