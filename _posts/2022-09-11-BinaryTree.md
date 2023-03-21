@@ -2,7 +2,7 @@
 
 - [Binary Tree](#binary-tree)
   - [What is binary tree ?](#what-is-binary-tree-)
-  - [Iteration](#iteration)
+  - [Traversal](#traversal)
 
 
 
@@ -19,10 +19,10 @@
     -  For binary search tree
         vals of left subtree <= root.val <= vals of right subtree 
 
-### Iteration
+### Traversal
 - Preorder 
     - root, left, right 
-      - iteration by **recursion**
+      - traversal by **recursion**
         ```python
         class Solution:
             def preorderTraversal(self, root: TreeNode) -> List[int]:
@@ -37,7 +37,7 @@
                 preorder(root)
                 return res
         ```
-      - iteration with a stack
+      - traversal with a stack
         ```python
         class Solution(object):
             def preorderTraversal(self, root):
@@ -64,5 +64,11 @@
         ```
 - Inorder 
   - left, root, right
+  - [example](https://leetcode.cn/problems/binary-tree-inorder-traversal/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio/)
 - Postorder 
-  - right, left, root
+  - left, right, root
+  - [example](https://leetcode.cn/problems/binary-tree-postorder-traversal/solution/er-cha-shu-de-hou-xu-bian-li-by-leetcode-solution/)
+
+- Level order
+  - [example](https://leetcode.cn/problems/binary-tree-level-order-traversal/solution/bfs-de-shi-yong-chang-jing-zong-jie-ceng-xu-bian-l/)
+  - 
