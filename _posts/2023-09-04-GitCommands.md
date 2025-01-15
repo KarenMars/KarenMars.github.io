@@ -6,6 +6,7 @@
   - [Useful commands](#useful-commands)
     - [The difference between git merge and git rebase](#the-difference-between-git-merge-and-git-rebase)
     - [Git submodule](#git-submodule)
+    - [Git cherry-pick](#git-cherry-pick)
   - [Questions and answers](#questions-and-answers)
 
 
@@ -84,6 +85,9 @@
     4. Delete the submodule directory from your filesystem.
 
   Using Git submodules allows you to include external code repositories in your project while keeping them separate and manageable. However, they can be a bit complex, so make sure to read the Git documentation for further details and advanced use cases.
+
+### Git cherry-pick
+By using `git cherry-pick <commitHash>` can apply a specified commit on the desired branch.
 
 ## Questions and answers
 
